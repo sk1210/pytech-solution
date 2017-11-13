@@ -1,2 +1,2 @@
 # pytech-solution
-Source Code for all bllogs of pytech-solution.blogspot..in
+Source Code for all blogs of pytech-solution.blogspot..in
