@@ -12,11 +12,10 @@ def detectFace(img):
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 
-#recognizer = cv2.createLBPHFaceRecognizer()
-
+# We will be using LBPH 
 recognizerLBP = cv2.createEigenFaceRecognizer()
-recognizerEigenFace = cv2.createLBPHFaceRecognizer()
-recognizerFisher =  cv2.createFisherFaceRecognizer()
+#recognizerEigenFace = cv2.createLBPHFaceRecognizer()
+#recognizerFisher =  cv2.createFisherFaceRecognizer()
 
 # load all face images
 allImgPath = "imgs"
@@ -42,13 +41,12 @@ for label in os.listdir(allImgPath):
 # ------------------------------------Start Training-------------------------------------#
 
 recognizerLBP.train(faceImgs, np.array(faceLabels))
-recognizerEigenFace.train(faceImgs, np.array(faceLabels))
-recognizerFisher.train(faceImgs, np.array(faceLabels))
+#recognizerEigenFace.train(faceImgs, np.array(faceLabels))
+#recognizerFisher.train(faceImgs, np.array(faceLabels))
 
 
 recognizerLBP.save("trainedFacesLBP.xml")
-recognizerEigenFace.save("trainedFacesEigen.xml")
-recognizerFisher.save("trainedFacesFisher.xml")
+#recognizerEigenFace.save("trainedFacesEigen.xml")
+#recognizerFisher.save("trainedFacesFisher.xml")
 
-# Start testing
-cv2.destroyAllWindows()
+print ("Training finished ")
