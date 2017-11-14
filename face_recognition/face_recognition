@@ -35,4 +35,4 @@ print "Eigen RESULT : " ,predEigen
 print "Fisher RESULT : " ,predFisher
 
 
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()
